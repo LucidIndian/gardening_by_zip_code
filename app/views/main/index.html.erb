@@ -1,3 +1,13 @@
-<h1>Welcome to Gardening by ZIP Code!</h1>
+<h1>Gardening by ZIP Code!</h1>
 
-<p>More coming soon...</p>
+<% if current_user %>
+  <p>Welcome back, <%= current_user.email %>!</p>
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <br>
+  <%= link_to "My Account", users_show_path %> 
+  <br>
+<% else %>
+  <p> GBZ is the place to be!</p>
+  <%= link_to "Sign In", new_user_session_path, method: :get %> |
+  <%= link_to "Sign Up", new_user_registration_path, method: :get %>
+<% end %>
