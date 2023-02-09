@@ -1,0 +1,6 @@
+<h1>Users#show</h1>
+<p>Logged in as <%= current_user.email %></p>
+
+<%#= link_to "New Garden", new_user_garden_path %>
+
+<%= link_to "New Garden", new_user_garden_path(@user) %>

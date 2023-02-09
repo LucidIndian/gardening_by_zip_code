@@ -1,4 +1,4 @@
-<%= form_with(model: garden) do |form| %>
+<%= form_with(model: [@user, garden]) do |form| %>
   <% if garden.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(garden.errors.count, "error") %> prohibited this garden from being saved:</h2>
@@ -16,19 +16,14 @@
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
+    <div>
     <%= form.label :zip, style: "display: block" %>
     <%= form.number_field :zip %>
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
   </div>
 
   <div>

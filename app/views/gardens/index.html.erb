@@ -1,14 +1,31 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Gardens</h1>
 
-<div id="gardens">
-  <% @gardens.each do |garden| %>
-    <%= render garden %>
+<div id="projects">
+  <% @gardens.each do |g| %>
+    <h4>Garden: <%= link_to g.name, user_garden_path(@user, g)%> - 
+      <%= link_to 'Edit', edit_user_garden_path(@user, g) %></h4>
+      <%= button_to "Delete garden", user_garden_path(@user, g), method: :delete, class:"button", data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
+    <%# <%= render p %>
     <p>
-      <%= link_to "Show this garden", garden %>
+      <%#= link_to 'Edit Project', edit_user_project_path(@user, p) %>
     </p>
   <% end %>
 </div>
+<hr>
 
-<%= link_to "New garden", new_garden_path %>
+<%# <div id="gardens">
+  <% @user.gardens.each do |garden| %>
+    <%#= render garden %>
+      <%#= link_to "Show this garden", user_garden_path %>
+      <%#= link_to 'Show User', [@user] %>
+      <%#= link_to 'Edit Garden', edit_user_garden_path(@user, garden) %>
+      <%#= button_to 'Destroy Garden', [@user, garden], method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <%# end %>
+<%# </div>  %>
+
+<%#= link_to "New garden", new_garden_path %>
+<%= link_to "New garden", new_user_garden_path %>

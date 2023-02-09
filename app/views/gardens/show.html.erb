@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<h1>Here's the garden</h1>
 
 <%= render @garden %>
 
 <div>
-  <%= link_to "Edit this garden", edit_garden_path(@garden) %> |
-  <%= link_to "Back to gardens", gardens_path %>
-
-  <%= button_to "Destroy this garden", @garden, method: :delete %>
+  <%= link_to "Edit this garden", edit_user_garden_path %>
+  <%#= button_to "Destroy this garden", @garden, method: :delete %>
+  <%= button_to "Delete garden", user_garden_path, method: :delete, class:"button", data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
 </div>
+<%= link_to "Back to gardens", user_gardens_path %>
+
