@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   # get 'profile', to: 'users#show'
 
   get "about", to: "about#index"
+  get "contact", to: "contact#index"
 
 end
