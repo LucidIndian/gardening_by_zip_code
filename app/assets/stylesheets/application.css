@@ -45,7 +45,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
   /* My Code: */ 
-  background-color: lightgreen;
   margin: 0px;
   min-height: 100vh; 
 }
@@ -70,7 +69,11 @@ q:before, q:after {
   font-size: 16px;
 }
 
-/* My Code */
+/* My Code! */
+
+html {
+  background-color: lightgreen;
+}
 
 p,h1,h2,h3,h4,h5,h6 {
   color: #282623;
@@ -116,6 +119,7 @@ h4 {
 
 button {
   padding: 3px 10px;
+  margin: 10px;
   border-style: solid;
   border-radius: 8px;
   height: 40px;
@@ -132,7 +136,7 @@ button {
 
 .container {
   display: grid;
-  grid-template: 75px 1fr 150px / 1fr;
+  grid-template: 75px 1fr 100px / 1fr;
   height: 100vh;
 }
 
@@ -144,6 +148,7 @@ button {
 
 .login {
   justify-content: flex-end;
+  margin-right: 2rem;
 }
 
 .logoandlinks {
@@ -160,4 +165,6 @@ button {
 
 .footer {
   background-color: #fbcd4b;
+  align-items: center;
+  justify-content: space-around;
 }
