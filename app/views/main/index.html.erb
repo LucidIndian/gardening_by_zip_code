@@ -1,52 +1,23 @@
 <div class="container">
-    <%# Header %>
-    <div class="header">
-      <div class="flex logoandlinks">
-        <%# logo %>
-        <div class="flex logo">
-          <img src="https://gardeningbyzipcode.com/images/GBZlogowhiteBG.svg" alt="gbz icon" height = 60px width = auto>
-        </div>
-        <%# links %>
-        <div>
-          <%= link_to "Contact", contact_path%> 
-        </div>
-        <div>
-          <%= link_to "About", about_path%>
-        </div>
-      </div>
-      <%# login %>
-      <div class="login flex">
-        <% if current_user %>
-          <p>Welcome back, <%= current_user.email %>!</p>
-          <div>
-            <%= link_to "My Account", users_show_path %> 
-          </div>
-          <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <div>
-            <%= link_to "Sign In", new_user_session_path, method: :get %>
-          </div> 
-          <div> 
-            <%= button_to "Sign Up", new_user_registration_path, method: :get %>  
-          </div>  
-        <% end %>
-      </div>
-
-    </div>
+  <%# Header %>
+  <%= render "shared/nav" %>  
   <%# Body %>
   <div class="body">
     <h1>Gardening by ZIP Code<h1>
-    <h2>Personalized for where your garden is!</h2>
+    <h2>Advice for where your garden is!</h2>
     <ul>
       <li>Create your account with your email and ZIP Code</li>
       <li>Get smart tips based on your garden's location and preferences</li>
       <li>Soon: Add plants and detailed site information
+    </ul>
 
-<h2>One day, you'll be able to use Gardening by ZIP Code to:</h2>
+  <h4>One day, Gardening by ZIP Code will help you do things like</h4>
 
-<h4>Become "one" with your garden and realise it's true potential</h4> 
-<h4>Restore native ecosystems to and save the planet!</h4>
-<h4>Make your home look, smell, and feel lovely with all the thriving flora!</h4>
+  <ul>
+    <li>Realize your garden's true potential while protecting it from disaster</li> 
+    <li>Restore and conserve native ecosystems</li>
+    <li>Make your home a more wonderful place</li>
+  </ul>
 
   </div> 
   <%# Footer %>

@@ -1,0 +1,34 @@
+<%# Header/ Navbar %>
+    <div class="header">
+      <div class="flex logoandlinks">
+        <%# logo %>
+        <div class="flex logo">
+          <img src="https://gardeningbyzipcode.com/images/GBZlogowhiteBG.svg" alt="gbz icon" height = 60px width = auto>
+        </div>
+        <%# links %>
+        <div>
+          <%= link_to "Contact", contact_path%> 
+        </div>
+        <div>
+          <%= link_to "About", about_path%>
+        </div>
+      </div>
+      <%# login %>
+      <div class="login flex">
+        <% if current_user %>
+          <p>Welcome back, <%= current_user.email %>!</p>
+          <div>
+            <%= link_to "My Account", users_show_path %> 
+          </div>
+          <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <div>
+            <%= link_to "Sign In", new_user_session_path, method: :get %>
+          </div> 
+          <div> 
+            <%= button_to "Sign Up", new_user_registration_path, method: :get %>  
+          </div>  
+        <% end %>
+      </div>
+
+    </div>
