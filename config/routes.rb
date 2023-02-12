@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   root to: "main#index"
+  # Can I redicrect a "logged in user" to a differnt page, like a dashboard?
 
   # Nested resources
   resources :users do

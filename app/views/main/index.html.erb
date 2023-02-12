@@ -1,12 +1,50 @@
-<h1>Gardening by ZIP Code!</h1>
+<div class="container">
+    <%# Header %>
+    <div class="header">
+      <div class="flex logoandlinks">
+        <%# logo %>
+        <div class="flex logo">
+          <img src="https://gardeningbyzipcode.com/images/GBZlogowhiteBG.svg" alt="gbz icon" height = 50px width = auto>
+        </div>
+        <%# links %>
+        <div>
+          <%= link_to "Contact", new_user_session_path, method: :get %> 
+        </div>
+        <div>
+          <%= link_to "Info", new_user_session_path, method: :get %>
+        </div>
+      </div>
+      <%# login %>
+      <div class="login flex">
+        <% if current_user %>
+          <p>Welcome back, <%= current_user.email %>!</p>
+          <div>
+            <%= link_to "My Account", users_show_path %> 
+          </div>
+          <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <div>
+            <%= link_to "Sign In", new_user_session_path, method: :get %>
+          </div> 
+          <div> 
+            <%= button_to "Sign Up", new_user_registration_path, method: :get %>  
+          </div>  
+        <% end %>
+      </div>
 
-<% if current_user %>
-  <p>Welcome back, <%= current_user.email %>!</p>
-  <%= link_to "My Account", users_show_path %> 
-  <br>
-  <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <p> GBZ is the place to be!</p>
-  <%= link_to "Sign In", new_user_session_path, method: :get %> |
-  <%= link_to "Sign Up", new_user_registration_path, method: :get %>
-<% end %>
+    </div>
+  <%# Body %>
+  <div class="body">
+    <h1>Gardening by ZIP Code<h1>
+    <h2>Personalized for where your garden is!</h2>
+    <ul>
+      <li>Create your account with your email and ZIP Code</li>
+      <li>Soon: Create your garden. Add plants and site information</li>
+      <li> Get smart tips based on your location and preferences</li>
+      <li>Master your garden, restore ecosystems, and save the world!</li>
+  </div> 
+  <%# Footer %>
+  <div class="footer flex">
+      Footer A  Footer B
+  </div> 
+</div>  
