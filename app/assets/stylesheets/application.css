@@ -75,6 +75,11 @@ html {
   background-color: lightgreen;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 p,h1,h2,h3,h4,h5,h6 {
   color: #282623;
   line-height: 1.1rem;
@@ -131,13 +136,19 @@ button {
 
 .body {
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
-.container {
+.home-container {
   display: grid;
-  grid-template: 75px 1fr 100px / 1fr;
-  height: 100vh;
+  min-height: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 100%;
+}
+
+.yield-container {
+  min-height: 100%;
+  padding-left: 0.5rem;
 }
 
 .header {
