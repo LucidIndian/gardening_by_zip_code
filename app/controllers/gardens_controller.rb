@@ -29,7 +29,7 @@ class GardensController < ApplicationController
 
     respond_to do |format|
       if @garden.save
-        format.html { redirect_to user_gardens_path(@user), notice: "Garden was successfully created." }
+        format.html { redirect_to user_gardens_path(@user), status: :see_other, notice: "Garden was successfully created." }
         format.json { render :show, status: :created, location: @garden }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class GardensController < ApplicationController
   def update
     respond_to do |format|
       if @garden.update(garden_params)
-        format.html { redirect_to user_garden_path(@user), notice: "Garden was successfully updated." }
+        format.html { redirect_to user_garden_path(@user), status: :see_other, notice: "Garden was successfully updated." }
         format.json { render :show, status: :ok, location: @garden }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class GardensController < ApplicationController
     @garden.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_gardens_path(@user), notice: "Garden was successfully destroyed." }
+      format.html { redirect_to user_gardens_path(@user), status: :see_other, notice: "Garden was successfully destroyed." }
       format.json { head :no_content }
     end
   end

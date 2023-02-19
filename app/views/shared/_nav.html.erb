@@ -21,6 +21,7 @@
       <div>
         <%= link_to "My Account", users_show_path %> 
       </div>
+      <%# data: { turbo: "false" } to force redirect, until its natively fixed %>
       <%= button_to "Log Out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
     <% else %>
       <div>
